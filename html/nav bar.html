@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<title>MY NAVIGATION BAR</title>
+    <style>
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+*{
+margin: 0;
+padding: 0;
+}
+
+li{
+    float: left;
+    width: 150px;
+    height:40px;
+    background-color: rgb(0, 255, 136);
+    opacity:  9;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0 0 0 5px azure    ;
+    
+}
+
+.a1{
+    text-decoration: none;
+    color:brown;
+    display: block;
+}
+.a1:hover{
+    background: red;
+}
+.li2{
+    display:none;
+}
+.li1:hover .li2{
+    display: block;  
+}
+.li1:hover{
+    background: purple;
+}
+
+    </style>
+<body>
+    <!-- my navigation styled bar -->
+    <nav>
+    <ul>
+        <li class="li1" ><a class="a1" href="#" >HOME</a></li>
+        <li class="li1"><a class="a1" href="#" >ABOUT</a>
+        <ul>
+            <li class="li2" ><a  class="a1" href="#">good</a></li>
+            <li class="li2" ><a class="a1" href="#">good</a></li>
+            <li class="li2" ><a class="a1" href="#">good</a></li>
+            <li class="li2" ><a class="a1" href="#">good</a></li>
+        </ul>
+        </li>
+        <li class="li1"><a class="a1" href="#" >CONTACT US</a></li>
+        <li class="li1"><a class="a1" href="#" >SERVICES</a>
+            <ul class="ul1">
+                <li class="li2" ><a class="a1" href="#">good</a></li>
+                <li class="li2" ><a class="a1" href="#">good</a></li>
+                <li class="li2"><a class="a1" href="#">good</a></li>
+                <li class="li2" ><a class="a1" href="#">good</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOBILEDOC</title>
+    <head>
+        <style type="text/css">
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+}
+html{
+    scroll-behavior:smooth;
+}
+    
+body{
+    background-image: url("3.png");
+    background-size: 1440px 700px;
+    background-repeat: no-repeat;
+background-color: rgba(255, 255, 255, 0.916);
+    overflow: scroll;
+    height: 500vh;
+}
+.p0:first-letter{
+font: 1.3em Brush Script;
+color: azure;
+font-weight: bold;
+}
+.p0{
+    font: 1em san serif;
+    color:white;
+    font-weight: bold;
+    padding: 12px 8px;
+margin: auto 550px auto 0;
+
+    
+
+}  
+
+.div-container{
+    justify-content: flex-end;
+    display: flex;
+    background:brown;
+        height: 12vh;
+    
+} 
+.cli{
+    margin:auto 20px auto 20px;
+    padding: 10px 10px 10px 10px;
+   /* border: 1px solid green;  */  
+    
+}
+.cli:hover{
+background:wheat ;
+}
+a{
+  text-decoration:none;
+color: blanchedalmond;
+
+}
+.div2{
+margin:120px 800px 0 50px;
+height: 50vh;
+background: black;
+opacity: 0.9;
+}
+.p1{
+    font-size:1.5em ;
+font-weight: 400;
+color: brown;
+margin-left:80px;
+padding: 70px 0 0 0;
+
+}
+
+.p2{
+font-size: 2em ;
+font-weight: bolder;
+color:white;
+margin-left:80px;
+margin-top:20px ;
+}
+.p4{
+color: white;
+margin-left:80px;
+margin-top:30px ;
+font-family: Calibri;
+}
+.p5{
+color: white;
+margin-left:80px;
+margin-top: 10px;
+font-family: Calibri;
+}
+#bt1{
+    padding: 15px 10px;
+    margin:50px 0 0 85px;
+    background-color:rgb(245, 46, 16);
+    border-radius: 7px;
+}
+#bt2{
+    padding: 15px 10px;
+    background-color: yellow;
+margin:50px 0 0 90px;
+border-radius: 7px;
+}
+.a1{
+color:wheat;
+}
+.a2{
+    color:brown;
+}
+.div3{
+width: auto;
+height: 50vh;
+background-color:brown;
+margin-top: 80px;
+}
+.div3p{
+   /* text-align: center;*/
+    font-family: Helvetica;
+    font-weight: bold;
+    background-color:aliceblue;
+    width: fit-content;
+    text-transform: uppercase;
+    margin:0 auto;
+    font-size: 1.5em;
+    color: yellow;
+
+}
+.navbar{
+    display: flex;
+   /* border: 1px solid green;*/
+    margin-right: 100px;
+    padding: 0;
+}
+
+
+@media (max-width: 600px) {  
+    
+}
+ @media (max-width: 768px) { 
+    body{
+        background-color: rgb(38, 236, 140);
+        background-size:768px 600px;
+        /* overflow:scroll; */
+    }
+.navbar{
+    flex-direction: row;  
+}
+
+.cli:hover{
+    background-color: rgb(175, 236, 84);
+    transition:.5s;
+
+
+   
+}
+
+} 
+
+@media (max-width: 992px) {
+    
+    body{
+/* background-color: red; */
+        background-size:992px 700px ;
+
+    
+}
+.navbar{
+    margin: 0px 0px 0 0;
+}
+.p0{
+    
+margin: 0;
+}
+.cli{
+    margin:auto 10px auto 10px;
+    border-bottom: 3px solid greenyellow;
+    background: rgb(174, 194, 145);
+
+}
+.p1,.p2,.p4,.p5,#bt1{
+    margin-left: 60px ;
+}
+
+   
+}
+@media (max-width: 1200px) {
+     /* body{
+        background-color: red;
+    }  */
+  
+.p0{
+ margin:15px 350px 20px 10px ;
+}
+.div2{
+width: 50%;    
+}
+
+
+
+}
+
+        </style>
+    </head>
+<body>
+<div class="div-container">
+<p class="p0">MOBILE DOCTOR <br>REPAIR</p>
+<div class="navbar">
+<div class="cli"><a href="#">HOME</a></div>
+<div class="cli"><a href="#mydevices">DEVICES</a></div>
+<div class="cli"><a href="#">ABOUT</a></div>
+<div class="cli"><a href="#">CONTACT</a></div>
+</div>
+</div>
+<div class="div2">
+    <p class="p1">Mobile</p>
+    <p class="p2" id="good">REPAIR SERVICES</p>
+    <p class="p4">Just send in your valuable smartphone and laptop will we take care of it.</p>
+    <p class="p5">Will we be happy to serve u ,Keep faith in us  </p>
+    <button type="submit" id="bt1"><a class="a1" href="#">GET STARTED NOW</button> </a><button type="submit" id="bt2"><a class="a2" href="#">LEARN MORE</button></a>
+    </div>
+   
+
+    <div class="div3" id="mydevices">
+        <p class="div3p">my devices</p>
+
+    </div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html

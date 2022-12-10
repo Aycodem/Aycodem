@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flappy bird </title>
+</head>
+
+
+
+<body>
+<div id="game">
+<div id="block"></div>
+<div id="hole"></div>
+<div id="bird"><img src="bird1.png" alt="bird"></div>
+</div>
+<div id="result">
+<h1>Game over</h1>
+<p id="text"></p>
+<button id="btn" onclick="location.reload()">restart</button>
+<p id="ay">~Ayco|>e~</p>
+</div>
+    <script>
+var hole = document.getElementById("hole");
+var game = document.getElementById("game");
+var result=document.getElementById("result");
+var score= 0;
+var jumping =0;
+
+
+hole.addEventListener("animationiteration",RanHole)
+
+function RanHole(){
+var random = -((Math.random()*350)+150)
+hole.style.top= random +"px";
+score++;
+}
+var fall = setInterval(function(){
+var birdTop=parseInt(window.getComputedStyle(bird).getPropertyValue("top"));
+if(jumping == 0)
+{
+bird.style.top=(birdTop+2) + "px";
+}
+var blockLeft=parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
+var hTop =(500+holeTop);
+if((birdTop > 450 ) ||  ((blockLeft < 50 )&&(blockLeft > -50 )) && ((birdTop < hTop)|| (birdTop > hTop + 100)))
+{
+result.style.display= "block";
+text.innerText =`Your final score is : ${score}`;
+game.style.display= "none";
+score = 0; 
+
+}
+},10) 
+
+window.addEventListener("keydown",hop)
+
+function hop()
+{
+   jumping= 1;
+
+var birdTop = parseInt(window.getComputedStyle(bird).getPropertyValue("top"));
+
+if(birdTop > 6)
+{
+    bird.style.top = (birdTop - 60) + "px";
+}
+setTimeout(function(){
+    jumping= 0
+},100) 
+}
+
+
+
+
+    </script>
+
+
+</body>
+
+
+<style>
+*{
+margin:0;
+padding: 0;
+}
+body{
+background-color: cadetblue ;
+background-image: -webkit-linear-gradient(lightblue,black,pink);
+min-height: 800px;
+}
+#game{
+
+height:500px;
+width: 400px;
+border: 1px solid black;
+background: url("game1.jpg");
+background-size: cover; 
+margin: 1rem auto;
+overflow:hidden;
+
+}
+#block{
+width: 50px;
+height: 500px;
+background-color: brown;
+position: relative;
+left: 200px;
+animation: block 2s linear infinite;
+
+}
+@keyframes block{
+0%{
+    left: 400px;
+}
+100%{
+left: -50px; 
+    
+}
+}
+
+  #hole{
+height: 150px;
+width: 50px;
+background-color: white;
+position:relative;
+left: 400px;
+top:-500px;
+animation: block 2s linear infinite;
+
+
+  }
+#bird{
+    position: fixed;
+top: 100px;
+height: 50px;
+width: 50px;
+}
+
+#bird img {
+height: 40px;
+width: 40px;
+}
+#result{
+    height: 200px ;
+width: 500px;
+background-color: rgb(40, 241, 171);
+margin: 5rem auto;
+border: 2px solid white;
+border-radius: 20px;
+display: none;
+text-align: center;
+
+}
+#btn{
+padding: 0.4rem 1rem;
+border:none;
+border-radius: 11px;
+background-color: green;
+color: white;
+font-size: 1.5rem;
+text-transform: uppercase;
+margin-top: 1rem;
+cursor: pointer;
+
+
+}
+#text{
+margin-top:1rem ;
+font-size:2rem;
+color:seashell;
+
+
+}
+#ay{
+    color:rgb(158, 158, 47);
+margin:25px auto ;
+font-weight: bold;
+font-family: Georgia;
+background-color: linear-gradient(to right,red ,white);
+
+
+}
+
+
+
+
+
+
+</style>
+</html>

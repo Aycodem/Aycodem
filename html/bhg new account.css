@@ -1,0 +1,81 @@
+body{
+                margin-top: 40px;
+                background:azure;
+                background-size:cover;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                background-position: center;
+}
+h3{
+                color:#55b4b0;
+                font-weight:bolder;
+                text-align: center;
+                text-transform: uppercase;
+
+}
+.container{
+                max-width: 500px;
+                width: 90%;
+                min-width: 300px;
+                margin: auto;
+                border-radius: 10px;
+                background: linear-gradient(60deg,coral,#55b4b0);
+                height: auto;
+                padding: 20px;
+                box-shadow: 30px 30px 30px 0 coral;
+                }
+.container>div>input{
+                padding: 8px;
+                height: 25px;
+                border:3px solid #55b4b0 ;
+                background:aliceblue;
+                letter-spacing:2px;
+                display:inline-block;
+}
+.container>div>input:focus{
+                background: #ddd;
+                outline:none;
+}
+.signup{
+                position:relative;
+                top:15px;
+                width: 80%;
+                background-color: lightgreen;
+                border-radius: 2px;
+                border: 10px;
+                color:aliceblue;
+                padding: 10px;
+                cursor:pointer;
+                opacity:0.8;
+}
+.verify:hover {
+                opacity: 1;
+}
+.verify{
+                background:rgb(13, 223, 125);;
+                padding: 7px;
+                opacity: .8;
+                color: aliceblue;
+                font-family:cabri;
+                border: 5px;
+                min-height: 40px;
+
+
+}
+.signup:hover{
+                opacity:1;
+
+}
+#verify , .verify{
+                display: inline;
+}
+.container>div>input{
+                width: 75%;
+}
+
+
+
+
+
+
+

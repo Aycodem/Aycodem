@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tipcalculator</title>
+    <head></head>
+    <style type="text/css">
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+    body{
+        background-color: purple;
+
+    }
+    #div-container{
+        border: 3px ridge green;
+        margin: 50px  auto;
+        /* box-sizing: border-box; */
+        width: 50%;
+    padding: 5px;
+    height: 500px;
+    background-color:yellowgreen;
+
+    }
+    #lastflex{
+    margin-top: 40px;
+
+        
+    }
+    
+    p{
+    border-radius:0 5px 5px 0px ;
+border: 4px solid white;
+width: 40%;
+background-color: cadetblue;
+}
+    #increase, #decrease {
+        border: 2px solid yellow;
+        cursor: pointer;
+        border-radius: 300px;
+        padding: 0;
+        margin: 5px 0 0 0;
+        width: 20px;
+        color: aliceblue;
+        background-color: brown;
+    }
+    input[type="text"]{
+        padding:015px 30px 10px 0;
+        background-color: aliceblue;color: brown;
+        border: 2px solid green;
+
+    }
+        
+nav {
+margin :20px auto;
+padding: 12px 15px ;
+text-align:center;
+color:brown
+;
+background-color: yellow;
+width: 50%;
+box-shadow: 0 7px 5px 0 honeydew;
+font-weight: bolder;
+font-family:'Segoe UI';
+    
+}
+
+
+    
+    </style>
+    <body>
+        
+<nav>TIPCAL PRO</nav>        
+        <div id="div-container">
+        <p>BILL TOTAL</p><br>
+        <span>$</span>
+        <input type="text" onkeyup="calculateBill()" id="billTotalInput" placeholder="0.00">
+        <p>TIP</p><br>
+        <span>%</span>
+        <input type="text" onkeyup="calculateBill()" id="tipInput" placeholder="10">
+        <div id="lastflex">
+            <div id="peoplediv">
+        <p>people</p>
+        <button id="increase" onclick="increasePeople()">+</button>
+        <div id="numberp">1</div>
+        <button id="decrease" onclick="decreasePeople()">-</button>
+    </div>
+    <div id="tppdiv">
+        <p>Total per person</p>
+        <div id="perPersonTotal">$0.00</div>
+    </div>
+    </div>
+
+
+    </div>
+
+    </body>
+<script type="text/javascript">
+
+
+var billInput=document.getElementById("billTotalInput")
+var tipInput=document.getElementById("tipInput")
+var numberofPeopleDiv=document.getElementById("numberp")
+var perPersonTotaldiv=document.getElementById("perPersonTotal")
+
+
+
+let numberofPeople =Number(numberofPeopleDiv.innerText)
+
+// numberofPeople.style.color= "Red"
+// const ncolor =numberofPeople.style
+
+
+
+const calculateBill=()=> { 
+    //get the billl from the user input and convert it to number 
+   const bill=Number(billInput.value)
+//get the tip from the user and convert it to percentage /100
+
+   const tippercentage =Number(tipInput.value) /100
+   //calcuulate the tipamount
+   const tipAmount = bill * tippercentage
+   //get the total
+   const total =tipAmount + bill
+   //get the totalperperson
+   const perPersonTotal =total /numberofPeople
+//    console.log(`$${perPersonTotal}`)
+
+   
+perPersonTotaldiv.innerText =`$${perPersonTotal.toFixed(0).toLocaleString('en-US')}`
+   //    console.log({tipAmount})
+   
+   // console.log(total)
+}
+
+
+
+
+
+const increasePeople=() => { 
+    //increment the amount of people 
+    numberofPeople+=1
+    //update the dom with new number of people
+   numberofPeopleDiv.innerText =numberofPeople
+//recall the function
+   calculateBill()
+   
+   numberofPeopleDiv.style.color= "green";
+   numberofPeopleDiv.style.fontWeight= "bolder";
+}
+
+
+const decreasePeople =() => { 
+    //decrement the amount of people
+if (numberofPeople <= 1){
+    return
+}else{
+numberofPeople -= 1
+numberofPeopleDiv.innerText=numberofPeople  
+}
+calculateBill()
+numberofPeopleDiv.style.color= "brown";
+numberofPeopleDiv.style.fontWeight= "bolder";
+    }
+
+
+
+
+
+
+</script>
+
+</html>

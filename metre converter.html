@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<title>cm to Meters Length Converter</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+box-sizing: border-box;
+
+}
+body{
+background-color:rgb(240, 255, 255) ;
+margin:auto;
+}
+  h2 ,.p2{
+text-align: center;
+margin-top:40px;
+color:salmon;
+
+  }
+.p2{
+margin-top: 40px;
+text-transform: uppercase;
+font-family:'Trebuchet MS';
+}
+.p3,.p4{
+  margin:30px auto 40px auto;
+}
+input{
+  padding: 12px 15px;
+background-color: antiquewhite;
+border:2px solid green;
+border-radius: 20px;
+  }
+  .p4,label{
+font-size: large;
+color:green;
+  }
+.style{
+border:3px solid pink;
+margin:auto;
+width: 70%;
+margin-top: 20px;
+background:rgb(85, 180, 176) ;
+border-radius: 20px;
+}
+h2{
+background: grey;
+width: 50%;
+margin:40px auto
+;
+}
+
+</style>
+<body>
+
+<h2>Length Converter</h2>
+<p class="p2">Type a value in the Feet field to convert the value to Meter:</p>
+<div class="style">
+<p class="p3">
+  <label>CM</label>
+  <input id="inputFeet" type="number" placeholder="cm"  oninput="calculate()">
+</p>
+<p class="p4">Meter(m): <span id="outputMeters"></span></p>
+</div>
+<script>
+  // <!-- oninput="LengthConverter(this.value)"  -->
+// function LengthConverter(valNum) {
+//    var output=document.getElementById("outputMeters");output.innerText=valNum*100;
+// }
+const output =document.getElementById("outputMeters")
+const input= document.getElementById("inputFeet")
+ const calculate=() => {
+const valueofinputcoollector =Number(input.value)
+let valoutput=valueofinputcoollector*100
+let valNum =(valoutput.toFixed(0))
+output.innerText=valNum
+
+ }
+</script>
+</body>
+</html>

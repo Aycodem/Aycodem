@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<title>Register</title>
+<body>
+
+    <h3>Create Account </h3><br>
+    
+    <style>
+
+        h5{
+            color:red
+        }
+    </style>
+
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+
+
+    <form action="register" method="POST">
+        {% csrf_token %}
+    <input class="text" placeholder="Username" name="username" ><br>
+    <input class="text" placeholder="email"name="email" ><br>
+    <input type="password" placeholder="New password" name="password" ><br>
+    <input type="password" placeholder="Confirm password"name="password2" ><br>
+    <input class="signup" style="background-color:green ;font-weight: bolder; color: blanchedalmond;"type="submit">
+        
+        </form>
+    
+</body> 
+</html

@@ -1,0 +1,4 @@
+rest api virtual enviroment -python -m venv nameofenviroment
+activation of virtualenv -.\venv\Scripts\activate
+open vscode for project-code .
+create cfehome in backend folder -django-admin startproject cfehome .

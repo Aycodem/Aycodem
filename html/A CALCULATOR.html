@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A code</title>
+</head>
+<style>
+@media only screen and (max-width: 600px) {
+
+body{
+background-color: red;
+}
+}
+body{
+    background-color: rgb(209, 209, 54);
+}
+.div-container{
+    background-color:black;
+    height: 75vh;
+    width: 50%;
+display: flex;
+flex-direction: column;
+border-radius: 40px;
+margin: 50px auto;
+
+}
+input[type="text"]{
+margin-top: 15px;
+padding:30px 15px 15px;
+/* width:auto; */
+background-color:black;
+border-radius: 15px;
+color: white;
+font-size: 2.2em;
+text-align: right;
+
+}
+p{
+position: relative;
+background-color: yellow;
+font-family:Verdana;
+text-transform: capitalize;
+color:coral;
+font-weight: bolder;
+text-align: center;
+padding: 5px;
+margin-top: 0;
+border-radius: 30px 0 10px 2px;
+border: transparent;
+
+width: 50%;
+
+}
+.home{
+    background-color: white;
+    padding: 3px;
+    width: 80px;
+    align-self: center;
+margin-top: 40px;
+    border-radius: 5px;
+}
+.cbt1{
+    display: grid;
+    grid-template-columns: auto auto auto  auto;
+    padding:20px;
+}
+.cbt2{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr ;
+    margin: 0 10px 0 20px;
+
+} 
+button{
+    padding:20px;
+border-radius: 100px;
+cursor: pointer;
+font-size: 1.5em;
+font-weight: bold;
+}
+.plus ,.minus,.multiply,.divide,.answer{
+    background-color: orange;
+}
+.ac,.plusminus,.percent{
+    background-color: rgb(228, 214, 214);
+}
+.zero,.dot,.one,.two,.three,.four,.five,.six,.seven,.eight,.nine{
+background: 
+}
+
+
+
+
+</style>
+<body>
+    <div class="div-container">
+<p contenteditable="true"> A calculator</p>
+    <input type="text" id="result" placeholder="0">
+    <div class="cbt1">
+    <button class="ac" value="ac" onclick="clr()">AC</button>
+    <button class="plusminus" value="C" onclick="del()">C</button>
+    <button class="percent" value="%" onclick="dis('%')">%</button>
+    <button class="divide" value="/" onclick="dis('/')">/</button>
+    <button class="seven" value="7" onclick="dis('7')">7</button>
+    <button class="eight" value="8" onclick="dis('8')">8</button>
+    <button class="nine" value="9" onclick="dis('9')">9</button>
+    <button class="multiply" value="*" onclick="dis('*')">*</button>
+    <button class="four" value="4" onclick="dis('4')">4</button>
+    <button class="five" value="5" onclick="dis('5')" >5</button>
+    <button class="six"  value="6" onclick="dis('6')">6</button>
+    <button class="minus" value="-" onclick="dis('-')">-</button>
+    <button class="one" value="1" onclick="dis('1')">1</button>
+    <button class="two" value="2" onclick="dis('2')">2</button>
+    <button class="three" value="3" onclick="dis('3')" >3</button>
+    <button class="plus" value="+" onclick="dis('+')">+</button>
+</div>
+<div class="cbt2">
+
+    <button class="zero" id="zeroid" value="0" onclick="dis('0')">0</button>
+    <button class="dot" value="." onclick="dis('.')">.</button>
+    <button class="answer" value="=" onclick="solve()">=</button>
+</div>
+    <div class="home"></div>
+
+
+
+
+
+
+
+</input>
+</body>
+ <script>
+    //get element of result  by id
+    let resultinput=document.getElementById("result");
+ //fuction that display value
+let dis =(val) => {
+    resultinput.value +=val;
+    // console.log("inputvalue")
+}
+
+//fuction that evaluate digit and result
+    const solve=() => {
+        let x =resultinput.value;
+        let y =eval(x) ;
+        resultinput.value =y
+
+        // let x =inputvalue;
+        // let y =val;
+        // let z=calc(x,y)
+
+    }
+
+    //fuction that clear the display
+
+    const clr =() => {
+        resultinput.value=""
+    }
+ 
+//     function that decrement input value
+ var del=() => {
+ resultinput.value=resultinput.value.slice(0,-1)
+ }
+
+ 
+
+
+
+
+ </script>
+
+
+
+
+
+
+
+</html>

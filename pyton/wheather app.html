@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Wheather app </title>
+    <style type="text/css">
+        body{
+            background-color: rgb(113, 102, 102);
+        }
+.div-container1{
+    /* background-color: yellow; */
+display: flex;
+flex-direction: column;
+height: 80vh;
+width: 50%;
+border-radius: 10px ;
+margin: 100px auto;
+
+}
+.div-container2{
+    background-color: rgb(235, 235, 137);
+    width: 92%;
+    height: 75vh;
+    margin: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow:inset 0 0 10px brown;
+    
+}
+.span1{
+    color: green;
+    font-family: 'Gill Sans';
+    font-weight: bolder;
+    font-size:30px ;
+}
+.p1{
+    background-color:aliceblue ;
+    padding: 7px;
+    margin-top: 0;
+    border-radius: 7px 7px 0 0;
+
+    color: yellowgreen;
+    font-weight: bold;
+    font-family:  'Trebuchet MS' ;
+    font-size: 1em;
+}
+input{
+    background-color:rgb(172, 204, 107);
+    margin-top: 20px;
+    padding: 20px 50px 30px 12px;
+    border: transparent;
+    font-size: 15px;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+input:focus{
+    outline: none;
+}
+button{
+    padding: 13px  ;
+    margin: 30px 0 0 100px;
+    background-image:linear-gradient( to right,yellowgreen 95%,white  );
+    border: transparent;
+    cursor: pointer;
+    width: 120px;
+    align-items: center;
+    text-align: center;
+    color: rgb(235, 235, 137);
+    border-radius: 10px ;
+    font-weight: bold;
+    box-sizing: border-box;
+    
+
+}
+.result-container{
+    background-color:aliceblue;
+    width: 100%;
+    height: 30vh;
+    margin-top: 80px;
+    box-shadow:inset 0 0 10px rgb(235, 235, 137);
+}
+.result-span{
+    font-size: 1.5em;
+    background-color: transparent;
+    text-align: center;
+    font-family: cursive;
+    color: yellowgreen;
+}
+.searchlogo{
+    font-size: large;
+}
+    </style>
+</head>
+<body>
+    <div class="div-container1">
+        <div class="div-container2">
+            <div class="topbar">
+                <p class="p1"><span class="span1">🌤</span>heather app</p>
+                <input type="text" placeholder="search" id="inputclass">
+                <button onclick="submit()">Submit <span class="searchlogo">🔍</span> </button>
+                <div class="result-container">
+                    <p class="result-span">--------- <br>-----<br>--------<br>------</p>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    let inputValue = document.getElementById("inputclass");
+     let resultDiv= document.querySelector(".result-span")
+
+    
+ const submit=() =>{
+
+
+    switch(inputValue.value){
+    case "nigeria":
+    case "Nigeria": 
+    case "NIGERIA":
+       answer: resultDiv.innerHTML="24 ℃<br>Sunday 11:41<br> Mostly cloudy ⛅";
+        break;
+        default:resultDiv.innerHTML="not found"
+}
+
+}
+
+
+
+</script>
+</html>

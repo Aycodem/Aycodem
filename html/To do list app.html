@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do app</title>
+</head>
+<style>
+    .container {
+        margin: 70px auto;
+        border-radius: 10px;
+        background-color: greenyellow;
+        width: 50%;
+        height: 70vh;
+    }
+
+    .childbox {
+        margin: 50px 0 0 0;
+        width: 100%;
+        background-color: grey;
+        height: 25vh;
+        border-radius: 10px;
+
+
+
+
+    }
+
+    input {
+        margin-top: 50px;
+        width: 70%;
+        padding: 10px 10px 10px 0;
+        background-color: azure;
+        border: 2px solid greenyellow;
+        color: rgb(145, 208, 51);
+
+    }
+
+    p {
+        color: greenyellow;
+        text-align: center;
+        margin-top: 40px;
+        padding: 12px;
+        font-weight: bolder;
+    }
+
+    .submit {
+        padding: 12px;
+        background-color: greenyellow;
+        border: transparent;
+        box-sizing: border-box;
+        color: white;
+    }
+
+    #result {
+        background-color: gray;
+        width: 100%;
+        height: 42.2vh;
+        border-radius: 10px;
+        margin-top: 20px;
+
+
+    }
+
+    #delete {
+        padding: 8px;
+        background-color: rgb(237, 35, 35);
+        border: transparent;
+        box-sizing: border-box;
+        color: white;
+        border-radius: 7px;
+
+    }
+
+    li {
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        /* border: 2px solid wheat; */
+        justify-content: space-between;
+
+
+    }
+
+    span {
+        color: rgb(209, 231, 177);
+        font-weight: bold;
+        font-family: sans-serif;
+
+
+
+    }
+
+    li {
+        list-style: none;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="childbox">
+            <p> ADD ITEM</p>
+            <input type="text" id="todo-text" placeholder="Create-New-List">
+            <button class="submit" onclick="submit()"> Submit </button>
+
+        </div>
+        <div id="result">
+          
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript">
+
+    var note = [],
+        outerElement = document.getElementById("result");
+
+    
+
+    var init = () => {
+
+        outerElement.innerHTML = "";
+
+        note.map((note, index) => {
+            // console.log("working")
+
+            var list = document.createElement("li"),
+                listText = document.createElement("span"),
+                listButton = document.createElement("button");
+
+            list.setAttribute("id", "notes");
+            listText.setAttribute("id", "ntext");
+            listButton.setAttribute("id", "delete");
+            listButton.setAttribute("onclick", "deletefuc(" + index + ")");
+            listButton.innerText = "Delete";
+
+            listText.innerText = note;
+
+            list.appendChild(listText);
+            list.appendChild(listButton);
+
+
+            outerElement.appendChild(list);
+
+        })
+
+        return true;
+    }
+
+    function getFromStorage() {
+        if(localStorage.getItem("todoapp")){
+            note = localStorage.getItem("todoapp").split("[|]");
+            // console.log(note)
+        }
+
+        init();
+    }
+
+    function saveToStorage(){
+
+        // console.log(note)
+        var newString = "";
+        
+        note.map((note, index)=>{
+
+            if(index > 0){
+                newString += "[|]" + note;
+            }else{
+                newString += note;
+
+            }
+            
+        })
+
+        
+        localStorage.setItem("todoapp", newString);
+
+    }
+
+    let submit = () => {
+        var inputField = document.getElementById("todo-text")
+        // console.dir(inputField.value)
+        if (inputField.value.trim() !== "") {
+            note.push(inputField.value)
+
+            if(init()){
+                inputField.value = "";
+                inputField.focus();
+                saveToStorage();
+            };
+        }else{
+
+        }
+
+
+
+
+    }
+
+
+
+    const deletefuc = (id) => {
+        // console.log(id)
+
+        note = note.filter((note, index)=> index !== id);
+
+        saveToStorage();
+
+        init();
+
+        // console.log(note);
+
+    }
+
+
+    getFromStorage();
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <title>
+
+    </title>
+    <head>
+       <p> CHARACTER SETS AND RANGES IN REGEX</p>
+<script>
+    function employee(){
+    var empid =document.getElementById("eid").value
+    var check =/[MD]200[1-99]/i
+    if ((check.test(empid))){
+
+        alert ("valid employee id")
+    }
+    else
+    {
+        alert("invalid employee id")
+    }
+}
+
+
+</script>
+    </head>
+
+<body>
+
+<input id="eid" placeholder="employee id" type="text"></input>
+
+<buttton style="border: 2px solid green;background:red;" type="submit"  onclick="employee()">submit</buttton>
+
+</body>
+
+
+
+
+
+</html>

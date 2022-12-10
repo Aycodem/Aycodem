@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <me
+    ata http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my rating design</title>
+</head>
+<style type="text/css">
+    #divcont{
+        width: 40%;
+        /* border: 2px ridge yellow; */
+        background-color:wheat;
+padding: auto;
+border-radius: 5px;
+display: flex;
+justify-content: flex-start;
+    }
+    #itemcont{
+        width: 90%;
+        background: lawngreen;
+        padding: 5px 5px;
+        border-radius: 5px;
+
+    }
+    #containertext{
+        display: flex;
+        flex-direction:row ;
+        width:40% ;
+        justify-content: flex-start;
+    }
+    #distwo{
+        color: green;
+    }
+    #disone{
+        margin-right:auto;
+        color:teal;
+    }
+    
+.allskill{
+margin-top: 70px;
+}
+#myskilltitle{
+text-align: center;   
+ text-transform: uppercase;
+font-weight: bold;
+font-size: 1.2em;
+padding: 5px;
+color:saddlebrown;
+background-color:cornsilk;
+width: 50%;
+margin: auto;
+ }
+</style>
+<body onload="autorefresh(2000)">
+    <p id="myskilltitle">my skill rating</p>
+    <div class="allskill">
+    <div id="containertext">
+    <p id="disone">Html </p>
+    <p id="distwo">90%</p>
+    </div>
+    <div id="divcont">
+        <div id="itemcont"></div>
+    </div>
+</div>
+</body>
+<script>
+ const autorefresh =(t) =>{
+    setTimeout("location.reload(true)",t)
+ }
+ 
+ 
+var pid=document.querySelector("#disone")
+</script>
+</html>

@@ -1,0 +1,19 @@
+create vitual enviroment in python - mkvirtualenv nameofenviroment
+
+create new project-django-admin startproject nameofproject
+
+create new app in django file - python manage.py startapp nameofapp 
+
+switch virtual enviroment -workon nameofenviroment 
+
+leave virtual enviroment -deactivate
+
+running the server -python manage.py runserver
+
+making migration -python manage.py makemigrations
+
+migrate - python manage.py migrate  
+
+create dashboard for admin -python manage.py createsuperuser
+
+

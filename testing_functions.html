@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+            /* box-sizing: border-box; */
+        }
+
+        body{
+            position: relative;
+        }
+        .my-popup{
+            padding: 20px;
+            width: 200px;
+            height: auto;
+            background: green;
+            position: fixed;
+            border-radius: 10px;
+            left: 50%;
+            color: white;
+            opacity: 0;
+            transition: 2s ease all;
+display: none;
+top: 50%;
+transform: translate(-50%, -50%);
+        }
+
+        #close-popup{
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+#open-popup{
+    display: block;
+margin: 20px auto;
+padding: 40px;
+cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <button id="open-popup">open</button>
+
+
+    <div class="my-popup">
+        This is a my-popup
+
+        <button id="close-popup">Close</button>
+    </div>
+
+    <div class="pops"></div>
+    <div class="pops"></div>
+    <div class="pops"></div>
+    
+    <script>
+
+        
+
+        //getting the buttons from dom content
+
+var openButton = document.getElementById ('open-popup')
+var closeButton = document.getElementById('close-popup')
+
+console.log()
+//getting the popup element
+
+var popupmessage = document.querySelector('.my-popup');
+
+//adding click event listener to the buttons
+openButton.addEventListener('click', ()=>{
+popupmessage.style.display = "block";
+
+setTimeout(()=>{
+    popupmessage.style.opacity = "1";
+
+}, 100)
+})
+
+closeButton.addEventListener('click', ()=>{
+    popupmessage.style.opacity = "0";
+    
+    setTimeout(()=>{
+        popupmessage.style.display = "none";
+
+}, 1000)
+})
+
+    </script>
+    
+</body>
+</html>
+
